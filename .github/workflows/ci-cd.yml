@@ -8,10 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ci-cd-app
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,6 +36,5 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./ci-cd-app
           push: true
           tags: sreejareddy007/ci-cd-app:latest
